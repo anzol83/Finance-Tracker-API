@@ -1,8 +1,9 @@
-import UserSchema from "./UserSchema.js"
+import UserModel from './UserSchema.js'
 
+export const createUser = (userObj)=>{
+    return UserModel(userObj).save();
+}
 
-// C
-export const insertUser = (userObj) => {
-
-    return UserSchema(userObj).save()
+export const getUserbyEmail = (email)=>{
+    return UserModel.findOne({email})
 }
